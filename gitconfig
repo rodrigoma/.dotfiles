@@ -1,0 +1,37 @@
+# This is Git's per-user configuration file.
+[user]
+    name = Rodrigo Monteiro
+    email = rodrigoma@gmail.com
+[alias]
+    co = checkout
+    st = status -b -s
+    ci = commit
+    br = branch
+    ignored = !git ls-files -v | grep "^[[:lower:]]"
+    last = log -1 HEAD
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    testmerge = merge --no-commit --no-ff
+    unstage = reset HEAD
+    startover = !git reset --hard HEAD && git clean -f -d -x
+    #### [BEGIN] Git Like Slide ####
+    agenda = log --decorate --oneline --graph
+    next = !git checkout `git rev-list HEAD..slide-end | tail -1`
+    prev = checkout HEAD^
+    tagstart = tag -a slide-start -m \"tag start slide\"
+    tagend = tag -a slide-end -m \"tag end slide\"
+    #### [END] Git Like Slide ####
+[github]
+    user = rodrigomonteiro
+[color]
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
+[core]
+    editor = vim
+    excludesfile = ~/.gitignore_global
+[mergetool "sublime"]
+    cmd = subl -w $MERGED
+    trustExitCode = false
+[merge]
+    tool = sublime
