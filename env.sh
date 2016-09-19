@@ -14,7 +14,7 @@ export EDITOR='subl -w'
 export USER_NAME="Rodrigo Monteiro"
 
 #ZSH completion
-#fpath=(/usr/local/share/zsh-completions $fpath)
+#fpath=(~/.zprezto/modules/completion/external/src $fpath)
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export JAVA_HOME=$(/usr/libexec/java_home)
