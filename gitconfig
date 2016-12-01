@@ -14,11 +14,12 @@
     unstage = reset HEAD
     startover = !git reset --hard HEAD && git clean -f -d -x
     #### [BEGIN] Git Like Slide ####
-    agenda = log --decorate --oneline --graph
+    agenda = log --decorate=no --oneline --graph slide-end
     next = !git checkout `git rev-list HEAD..slide-end | tail -1`
     prev = checkout HEAD^
     tagstart = tag -a slide-start -m \"tag start slide\"
     tagend = tag -a slide-end -m \"tag end slide\"
+    gostart = checkout slide-start
     #### [END] Git Like Slide ####
 [github]
     user = rodrigomonteiro

@@ -24,6 +24,9 @@ eval "$(jenv init -)"
 # GOLANG
 export GOPATH=$HOME/golang
 
+#Ruby
+eval "$(rbenv init -)"
+
 # Enabling CTRL+LEFT and CTRL+RIGHT to skip words
 bindkey ';5D' emacs-backward-word
 bindkey ';5C' emacs-forward-word
@@ -33,7 +36,7 @@ bindkey ';5C' emacs-forward-word
 #
 
 # Load RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 source /usr/local/share/zsh/site-functions/_aws
 
@@ -47,6 +50,9 @@ function r() { grep "$1" ${@:2} -R . }
 
 # mkdir and cd
 function mkcd() { mkdir -p "$@" && cd "$_"; }
+
+#list content tar
+function tarlist() { tar -ztvf "$@"; }
 
 #
 # Aliases
@@ -63,4 +69,10 @@ alias gjava='git ls-files -co --exclude-standard | grep '\.java$' | xargs git ad
 alias kimble='ssh -i ~/Dropbox/AWS/kimble.pem ec2-user@ec2-52-32-141-213.us-west-2.compute.amazonaws.com'
 alias dominic='ssh -i ~/Dropbox/AWS/kimble.pem ec2-user@ec2-52-33-162-126.us-west-2.compute.amazonaws.com'
 alias jaiminho='ssh -i ~/Dropbox/AWS/kimble.pem ec2-user@ec2-52-27-64-34.us-west-2.compute.amazonaws.com'
+
+# Alias mysqlcli docker
+#alias mysqlcli='docker run -it --rm --name mysqlterm --link mysql --rm mysql:5.7 sh -c \'exec mysql -h"$MYSQL_PORT_3306_TCP_ADDR" -P"$MYSQL_PORT_3306_TCP_PORT" -uroot -p"$MYSQL_ENV_MYSQL_ROOT_PASSWORD"\''
+
+#Alias moip
+source /Users/rodrigo.amaral/.aliases
 
